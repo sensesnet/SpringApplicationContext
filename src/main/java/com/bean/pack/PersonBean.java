@@ -1,10 +1,10 @@
 package com.bean.pack;
 
-public class  LabRat {
+public class PersonBean {
     private String text;
     private String name;
 
-    public LabRat(String text) {
+    public PersonBean(String text) {
         this.text = text;
     }
 
