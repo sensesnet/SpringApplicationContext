@@ -47,6 +47,39 @@
                 <value>0</value>
             </set>
         </property>
-
     </bean>
+    <bean id="map" class="com.bean.pack.collections.MapBean">
+        <property name="text" value="List Bean!"/>
+        <property name="map">
+            <map>
+                <entry key = "1" value="Kirill"/>
+                <entry key = "2" value="Irina"/>
+                <entry key = "a" value="Svetlana"/>
+                <entry key = "b" value="Artur"/>
+                <entry key = "1L" value="Max"/>
+                <entry key = "1" value="Kirill"/>
+                <entry key = "2" value="Irina"/>
+                <entry key = "a" value="Svetlana"/>
+                <entry key = "b" value="Artur"/>
+                <entry key = "1L" value="Max"/>
+            </map>
+        </property>
+    </bean>
+    <bean id="props" class="com.bean.pack.collections.PropsBean">
+    <property name="text" value="List Bean!"/>
+    <property name="props">
+        <props>
+            <prop key = "1">Kirill</prop>
+            <prop key = "2">Irina</prop>
+            <prop key = "a">Svetlana</prop>
+            <prop key = "b">Artur</prop>
+            <prop key = "2l">Max</prop>
+            <prop key = "1">Kirill</prop>
+            <prop key = "2">Irina</prop>
+            <prop key = "a">Svetlana</prop>
+            <prop key = "b">Artur</prop>
+            <prop key = "2l">Max</prop>
+        </props>
+    </property>
+</bean>
 </beans>

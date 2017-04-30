@@ -1,6 +1,8 @@
 package com.bean.pack;
 
 import com.bean.pack.collections.ListBean;
+import com.bean.pack.collections.MapBean;
+import com.bean.pack.collections.PropsBean;
 import com.bean.pack.collections.SetBean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -53,5 +55,12 @@ public class Main {
         System.out.println("element '10': " + set.getElementByID(10));
 
         //test map collection
+        MapBean map = (MapBean) ac.getBean("map");
+        System.out.println("Map element:" + map.getMap());
+
+        //test props collection
+        PropsBean props = (PropsBean) ac.getBean("props");
+        System.out.println("Map element:" + props.getProps());
+
     }
 }
