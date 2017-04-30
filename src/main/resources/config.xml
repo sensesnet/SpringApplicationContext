@@ -8,12 +8,45 @@
         <property name="name" value="Mike"/>
         <!--<property name="text" value="Hello"/>-->
     </bean>
+    <!--Get instance by factory-method-->
     <bean id="address" class="com.bean.pack.AddressBean" factory-method="getInstance">
         <property name="town" value="NY"/>
         <property name="street" value="With"/>
     </bean>
+    <!--param in Spring -->
     <bean id="account" class="com.bean.pack.AccountBean" scope="prototype"
         p:id="1" p:summary="100" p:person-ref="person">
+    </bean>
+
+    <!--Collection in Spring-->
+    <bean id="list" class="com.bean.pack.collections.ListBean">
+        <property name="text" value="List Bean!"/>
+        <property name="list">
+            <list>
+                <value>0</value>
+                <value>Cosmos</value>
+                <value>2.0</value>
+                <value>3</value>
+                <value>4L</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="set" class="com.bean.pack.collections.SetBean">
+        <property name="text" value="List Bean!"/>
+        <property name="set">
+            <set>
+                <value>0</value>
+                <value>Cosmos</value>
+                <value>2.0</value>
+                <value>3</value>
+                <value>4L</value>
+                <value>4L</value>
+                <value>3</value>
+                <value>2.0</value>
+                <value>Cosmos</value>
+                <value>0</value>
+            </set>
+        </property>
 
     </bean>
 </beans>
