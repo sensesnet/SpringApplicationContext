@@ -3,9 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="person" class="com.bean.pack.PersonBean">
+    <bean id="person" class="com.bean.pack.PersonBean" init-method="init" destroy-method="destroy">
         <constructor-arg value="Hi!"/>
         <property name="name" value="Mike"/>
         <!--<property name="text" value="Hello"/>-->
+    </bean>
+    <bean id="address" class="com.bean.pack.AddressBean" factory-method="getInstance">
+        <!--<constructor-arg value="Hi!"/>-->
+        <property name="town" value="NY"/>
+        <property name="street" value="With"/>
     </bean>
 </beans>

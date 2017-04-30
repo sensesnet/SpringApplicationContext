@@ -24,7 +24,19 @@ public class PersonBean {
         return name;
     }
 
-    public void sayHi(){
+    public void sayHi() {
         System.out.println(text);
     }
+
+
+    //initialization
+    public void init() {
+        System.out.println("Initialization of person");
+    }
+
+    //destroy
+    public void destroy() {
+        System.out.println("Destroy of person");
+    }
+
 }
