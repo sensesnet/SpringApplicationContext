@@ -60,7 +60,11 @@ public class Main {
 
         //test props collection
         PropsBean props = (PropsBean) ac.getBean("props");
-        System.out.println("Map element:" + props.getProps());
+        System.out.println("Props element:" + props.getProps());
 
+        //bean with SpEl expression
+        ExpressionBean expressionBean = (ExpressionBean) ac.getBean("expressionBean");
+        System.out.println("ExpressionBean pi = " + expressionBean.getPI()
+                + " count = " + expressionBean.getCount());
     }
 }

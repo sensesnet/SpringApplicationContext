@@ -82,4 +82,14 @@
         </props>
     </property>
 </bean>
+<bean id="expressionBean" class="com.bean.pack.ExpressionBean">
+    <property name="PI" value="#{T(java.lang.Math).PI}"/>
+    <property name="text" value="#{'Hello'}"/>
+    <property name="count" value="#{T(java.lang.Math).PI*20/10}"/>
+    <property name="logic" value="#{expressionBean.count gt 1000
+                                    and expressionBean.PI lt 10}"/>
+
+</bean>
+
+
 </beans>
