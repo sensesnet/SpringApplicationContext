@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
+
     <bean id="person" class="com.bean.pack.PersonBean" init-method="init" destroy-method="destroy">
         <constructor-arg value="Hi!"/>
         <property name="name" value="Mike"/>
@@ -83,11 +84,11 @@
         </property>
     </bean>
     <!--<bean id="expressionBean" class="com.bean.pack.ExpressionBean">-->
-        <!--<property name="PI" value="#{T(java.lang.Math).PI}"/>-->
-        <!--<property name="text" value="#{'Hello'}"/>-->
-        <!--<property name="count" value="#{T(java.lang.Math).PI*20/10}"/>-->
-        <!--<property name="logic" value="#{expressionBean.count gt 1000-->
-                                    <!--and expressionBean.PI lt 10}"/>-->
+    <!--<property name="PI" value="#{T(java.lang.Math).PI}"/>-->
+    <!--<property name="text" value="#{'Hello'}"/>-->
+    <!--<property name="count" value="#{T(java.lang.Math).PI*20/10}"/>-->
+    <!--<property name="logic" value="#{expressionBean.count gt 1000-->
+    <!--and expressionBean.PI lt 10}"/>-->
 
     <!--</bean>-->
 
@@ -113,11 +114,21 @@
 
     <!--autowiring_by_constructor-->
     <bean id="bmw" class="com.bean.pack.autowiring.byConstructor.BMWBean" autowire="constructor"
-          >
-        <constructor-arg  value="BMW"/>
-        <constructor-arg  ref="bmwColour"/>
+    >
+        <constructor-arg value="BMW"/>
+        <constructor-arg ref="bmwColour"/>
     </bean>
     <bean id="bmwColour" class="com.bean.pack.autowiring.byConstructor.BMWColourBean"
     />
+
+    <!--bean used inner bean-->
+    <bean id="globalInfo" class="com.bean.pack.dependencyInjection.GlobalInfo">
+        <property name="info" value="news"></property>
+        <property name="news">
+            <bean id="news" class="com.bean.pack.dependencyInjection.News">
+                <property name="news" value="Dependency injection strong power!"></property>
+            </bean>
+        </property>
+    </bean>
 
 </beans>
