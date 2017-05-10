@@ -1,5 +1,6 @@
 package com.bean.pack.autowiring;
 
+import com.bean.pack.autowiring.byConstructor.BMWBean;
 import com.bean.pack.autowiring.byName.AudiBean;
 import com.bean.pack.autowiring.byName.EngineBean;
 import com.bean.pack.autowiring.byName.WheelsBean;
@@ -28,15 +29,21 @@ public class MainAutowiringTest {
         System.out.println("Wheels size: " + audiBean.getWheelsSize());
 
 
-
-
-//        //autowiring by type
+        //autowiring by type
         MercedesBean mercedesBean = (MercedesBean) ac.getBean("mercedes");
         mercedesBean.setMercedesType("Mercedes Sl 350");
 
         System.out.println("Model type: " + mercedesBean.getMercedesType());
         System.out.println("Colour: " + mercedesBean.getColourType());
         System.out.println("Mex speed: " + mercedesBean.getSpeedType());
+
+
+        //autowiring by constructor
+        BMWBean bmwBean = (BMWBean) ac.getBean("bmw");
+        bmwBean.getBmwColourBean().setColour("white");
+        System.out.println("Model type: " + bmwBean.getModel());
+        System.out.println("Colour: " + bmwBean.getBmwColourBean().getColour());
+
 
     }
 }

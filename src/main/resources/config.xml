@@ -101,7 +101,7 @@
     </bean>
     <!--инициазизация задействует setter в общем классе-->
 
-    <!--autowirind_by_type-->
+    <!--autowiring_by_type-->
     <bean id="mercedes" class="com.bean.pack.autowiring.byType.MercedesBean" autowire="byType">
     </bean>
     <bean id="colourBean" class="com.bean.pack.autowiring.byType.ColourBean">
@@ -110,4 +110,14 @@
     <bean id="speedBean" class="com.bean.pack.autowiring.byType.SpeedBean">
         <property name="maxSpeedValue" value="550"/>
     </bean>
+
+    <!--autowiring_by_constructor-->
+    <bean id="bmw" class="com.bean.pack.autowiring.byConstructor.BMWBean" autowire="constructor"
+          >
+        <constructor-arg  value="BMW"/>
+        <constructor-arg  ref="bmwColour"/>
+    </bean>
+    <bean id="bmwColour" class="com.bean.pack.autowiring.byConstructor.BMWColourBean"
+    />
+
 </beans>
