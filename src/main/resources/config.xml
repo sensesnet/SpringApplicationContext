@@ -123,10 +123,10 @@
 
     <!--bean used inner bean-->
     <bean id="globalInfo" class="com.bean.pack.dependencyInjection.GlobalInfo">
-        <property name="info" value="news"></property>
+        <property name="info" value="news"/>
         <property name="news">
-            <bean id="news" class="com.bean.pack.dependencyInjection.News">
-                <property name="news" value="Dependency injection strong power!"></property>
+            <bean class="com.bean.pack.dependencyInjection.News">
+                <property name="news" value="Dependency injection strong power!"/>
             </bean>
         </property>
     </bean>
